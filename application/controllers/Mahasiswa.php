@@ -9,6 +9,9 @@ class Mahasiswa extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		if ( $this->session->userdata('sign') != TRUE  ) {
+			redirect( 'sign' );
+		}
 	}
 
 	function index() {
